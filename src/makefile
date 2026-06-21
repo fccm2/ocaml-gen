@@ -1,4 +1,4 @@
-OBJ=adjective.ml animals_en.cmo animals_es.cmo animals_fr.cmo animals_pt.cmo
+OBJ=adjective.cmo actions.cmo animals_en.cmo animals_es.cmo animals_fr.cmo animals_pt.cmo
 sentence.byte: gen.cmo $(OBJ) sentence.cmo
 	ocamlc -o sentence.byte gen.cmo $(OBJ) sentence.cmo
 gen.cmo: gen.ml
@@ -10,10 +10,12 @@ animals_es.cmo: animals_es.ml
 animals_fr.cmo: animals_fr.ml
 animals_pt.cmo: animals_pt.ml
 adjective.cmo: adjective.ml
+actions.cmo: actions.ml
 %.cmo: %.ml
 	ocamlc -c $<
 sentence.cmo: gen.cmo \
   adjective.cmo \
+  actions.cmo \
     animals_pt.cmo \
     animals_fr.cmo \
     animals_es.cmo \
@@ -27,6 +29,8 @@ clean:
 	$(RM) sentence.cmo
 	$(RM) adjective.cmi
 	$(RM) adjective.cmo
+	$(RM) actions.cmi
+	$(RM) actions.cmo
 	$(RM) animals_en.cmo
 	$(RM) animals_es.cmo
 	$(RM) animals_fr.cmo

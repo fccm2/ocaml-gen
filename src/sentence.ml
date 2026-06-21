@@ -9,6 +9,8 @@ let words = Animals_pt.load_words words
  
 let words = Adjective.load_words words
 
+let words = Actions.load_words words
+
 
 
 (* prepositions-fr *)
