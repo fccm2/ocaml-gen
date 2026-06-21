@@ -7,6 +7,8 @@ let words = Animals_es.load_words words
 let words = Animals_fr.load_words words
 let words = Animals_pt.load_words words
  
+let words = Adjective.load_words words
+
 
 
 (* prepositions-fr *)
